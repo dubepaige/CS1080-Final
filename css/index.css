@@ -1,0 +1,79 @@
+/* General Styling with Pastel-Hippie Colors */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f3e7; /* Light cream */
+    color: #555; /* Soft grey-brown */
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: #a8dadc; /* Soft aqua */
+    color: #1d3557; /* Deep blue */
+  }
+  
+  header nav a {
+    color: #457b9d; /* Muted blue */
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  button, .add-to-cart {
+    background-color: #f4a261; /* Soft coral */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover, .add-to-cart:hover {
+    background-color: #e76f51; /* Warm, earthy orange */
+  }
+  
+  /* Product Styling */
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1faee; /* Soft mint */
+    border-radius: 10px;
+  }
+  
+  /* Calendar Styling */
+  #calendar .calendar-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #ffe8d6; /* Light peach */
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-grid div {
+    padding: 10px;
+    background-color: #f0efeb; /* Light grey-tan */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .calendar-event {
+    background-color: #ffcccb; /* Soft pink */
+    color: #264653; /* Dark teal */
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
