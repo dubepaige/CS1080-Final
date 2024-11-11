@@ -1,57 +1,68 @@
-// Variables for the current month and year
-let currentMonth = new Date().getMonth();
-let currentYear = new Date().getFullYear();
+// calendar.js
 
-// Store events as an array of objects
-const events = [
-  { date: new Date(currentYear, currentMonth, 5), description: "Local Art Fair" },
-  { date: new Date(currentYear, currentMonth, 14), description: "Outdoor Market" },
-  { date: new Date(currentYear, currentMonth, 22), description: "Pop-up Shop at Riverwalk" }
-];
-
-// Function to render the calendar with events
-function renderCalendar(month, year) {
-  const monthYearHeader = document.getElementById("calendar-month-year");
-  const calendarGrid = document.querySelector(".calendar-grid");
-
-  monthYearHeader.textContent = new Date(year, month).toLocaleString("default", { month: "long", year: "numeric" });
-  calendarGrid.innerHTML = "";
-
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-  // Fill calendar with blank cells and date cells
-  for (let i = 0; i < firstDay + daysInMonth; i++) {
-    const cell = document.createElement("div");
-    if (i >= firstDay) {
-      const day = i - firstDay + 1;
-      cell.textContent = day;
-
-      // Check if there's an event on this date
-      const event = events.find(e => e.date.getDate() === day && e.date.getMonth() === month && e.date.getFullYear() === year);
-      if (event) {
-        const eventDiv = document.createElement("div");
-        eventDiv.textContent = event.description;
-        eventDiv.classList.add("calendar-event");
-        cell.appendChild(eventDiv);
+document.addEventListener("DOMContentLoaded", function () {
+    const monthYear = document.getElementById("month-year");
+    const calendarGrid = document.querySelector(".calendar-grid");
+    const events = {
+      "2024-11-15": "Craft Fair",
+      "2024-11-20": "Farmers Market",
+      "2024-11-28": "Holiday Pop-up"
+    };
+  
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+  
+    function renderCalendar() {
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      calendarGrid.innerHTML = "";
+  
+      // Set month and year header
+      monthYear.textContent = new Date(currentYear, currentMonth).toLocaleString("default", {
+        month: "long",
+        year: "numeric",
+      });
+  
+      // Empty slots before first day
+      for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement("div");
+        calendarGrid.appendChild(emptyCell);
+      }
+  
+      // Fill in dates with possible events
+      for (let date = 1; date <= daysInMonth; date++) {
+        const fullDate = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+        const dateCell = document.createElement("div");
+        dateCell.classList.add("calendar-date");
+        dateCell.textContent = date;
+  
+        if (events[fullDate]) {
+          dateCell.classList.add("event");
+          dateCell.title = events[fullDate];
+        }
+  
+        calendarGrid.appendChild(dateCell);
       }
     }
-    calendarGrid.appendChild(cell);
-  }
-}
-
-// Event listeners for month navigation
-document.getElementById("prev-month").onclick = () => {
-  currentMonth = (currentMonth - 1 + 12) % 12;
-  if (currentMonth === 11) currentYear--;
-  renderCalendar(currentMonth, currentYear);
-};
-
-document.getElementById("next-month").onclick = () => {
-  currentMonth = (currentMonth + 1) % 12;
-  if (currentMonth === 0) currentYear++;
-  renderCalendar(currentMonth, currentYear);
-};
-
-// Initialize calendar on page load
-window.onload = () => renderCalendar(currentMonth, currentYear);
+  
+    document.getElementById("prev-month").addEventListener("click", () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar();
+    });
+  
+    document.getElementById("next-month").addEventListener("click", () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      renderCalendar();
+    });
+  
+    renderCalendar();
+  });
+  

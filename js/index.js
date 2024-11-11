@@ -1,36 +1,88 @@
-// Sample products
-const products = [
-    { id: 1, name: "Product 1", price: 15.99, image: "images/product1.jpg" },
-    { id: 2, name: "Product 2", price: 25.99, image: "images/product2.jpg" },
-    { id: 3, name: "Product 3", price: 35.99, image: "images/product3.jpg" }
-  ];
+// calendar.js
+
+document.addEventListener("DOMContentLoaded", function () {
+    const monthYear = document.getElementById("month-year");
+    const calendarGrid = document.querySelector(".calendar-grid");
+    const eventInfo = document.getElementById("event-info");
+    const events = {
+      "2024-11-15": {
+        title: "Craft Fair",
+        description: "Join us at the local craft fair to explore our handmade products and unique items!"
+      },
+      "2024-11-20": {
+        title: "Farmers Market",
+        description: "Catch us at the Farmers Market! Perfect opportunity to see our latest products in person."
+      },
+      "2024-11-28": {
+        title: "Holiday Pop-up",
+        description: "Get ready for holiday shopping at our special pop-up event!"
+      }
+    };
   
-  let cartCount = 0;
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
   
-  // Function to render products in the product section
-  function renderProducts() {
-    const productList = document.querySelector(".product-list");
-    products.forEach(product => {
-      const productDiv = document.createElement("div");
-      productDiv.classList.add("product");
-      productDiv.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>$${product.price.toFixed(2)}</p>
-        <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-      `;
-      productList.appendChild(productDiv);
-    });
-  }
+    function renderCalendar() {
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      calendarGrid.innerHTML = "";
   
-  // Event listener for Add to Cart buttons
-  document.body.addEventListener("click", event => {
-    if (event.target.classList.contains("add-to-cart")) {
-      cartCount++;
-      document.getElementById("cart-button").textContent = `Cart (${cartCount})`;
+      // Set month and year header
+      monthYear.textContent = new Date(currentYear, currentMonth).toLocaleString("default", {
+        month: "long",
+        year: "numeric",
+      });
+  
+      // Empty slots before first day
+      for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement("div");
+        calendarGrid.appendChild(emptyCell);
+      }
+  
+      // Fill in dates with possible events
+      for (let date = 1; date <= daysInMonth; date++) {
+        const fullDate = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+        const dateCell = document.createElement("div");
+        dateCell.classList.add("calendar-date");
+        dateCell.textContent = date;
+  
+        // Highlight and add click event for dates with events
+        if (events[fullDate]) {
+          dateCell.classList.add("event");
+          dateCell.title = events[fullDate].title;
+          dateCell.addEventListener("click", () => showEventDetails(fullDate));
+        }
+  
+        calendarGrid.appendChild(dateCell);
+      }
     }
-  });
   
-  // Initialize products on page load
-  window.onload = () => renderProducts();
+    function showEventDetails(date) {
+      if (events[date]) {
+        eventInfo.innerHTML = `<strong>${events[date].title}</strong>: ${events[date].description}`;
+      } else {
+        eventInfo.textContent = "No events scheduled for this date.";
+      }
+    }
+  
+    document.getElementById("prev-month").addEventListener("click", () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar();
+    });
+  
+    document.getElementById("next-month").addEventListener("click", () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      renderCalendar();
+    });
+  
+    renderCalendar();
+  });
   

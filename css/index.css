@@ -195,4 +195,69 @@ header {
     font-size: 1.1rem;
     line-height: 1.5;
   }
+/* Calendar Section */
+#calendar-section {
+    text-align: center;
+    padding: 20px;
+  }
   
+  #calendar {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f1faee; /* Light background */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-header h3 {
+    margin: 0;
+    color: #264653;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-day, .calendar-date {
+    background-color: #a8dadc; /* Soft blue */
+    color: #264653; /* Dark text */
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .calendar-date.event {
+    background-color: #f4a261; /* Highlight for event days */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .calendar-day {
+    font-weight: bold;
+  }
+/* Event Details Section */
+#event-details {
+    background-color: #f4f4f9; /* Light background */
+    color: #264653; /* Dark text */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #event-details h3 {
+    margin-top: 0;
+    color: #e76f51; /* Earthy orange */
+  }
+      
