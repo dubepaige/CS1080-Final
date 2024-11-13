@@ -8,32 +8,32 @@
 </head>
 <body>
 
-    <header>
-        <h1>Our Store</h1>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="shop.html">Shop</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="calendar.html">Calendar</a>
-        </nav>
-      </header>
-      
+  <header>
+    <h1>Our Store</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="calendar.html">Calendar</a>
+    </nav>
+  </header>
 
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <form action="submit_form" method="POST">
+  <main>
+    <h2>Contact Us for Custom Orders</h2>
+    <form id="contactForm">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="message">Message:</label>
+      <label for="message">Custom Order Details:</label>
       <textarea id="message" name="message" required></textarea>
 
-      <button type="submit">Send Message</button>
+      <button type="button" onclick="saveToCSV()">Submit</button>
     </form>
-  </section>
+  </main>
 
+  <script src="js/contact.js"></script>
 </body>
 </html>

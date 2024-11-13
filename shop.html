@@ -3,39 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Our Products</title>
+  <title>Shop</title>
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-    <header>
-        <h1>Our Store</h1>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="shop.html">Shop</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="calendar.html">Calendar</a>
-        </nav>
-      </header>
-      
+  <header>
+    <h1>Our Store</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="calendar.html">Calendar</a>
+    </nav>
+  </header>
 
   <main>
     <section id="products">
-      <div class="product">
-        <img src="images/product1.jpg" alt="Product 1">
-        <h3>Product Name 1</h3>
-        <p>$19.99</p>
-        <button class="add-to-cart">Add to Cart</button>
+      <h2>Shop Our Products</h2>
+      <div class="product-list">
+        <!-- Example product items; you can dynamically generate these with JavaScript -->
+        <div class="product">
+          <h3>Product 1</h3>
+          <button onclick="addToCart('Product 1')">Add to Cart</button>
+        </div>
+        <div class="product">
+          <h3>Product 2</h3>
+          <button onclick="addToCart('Product 2')">Add to Cart</button>
+        </div>
+        <!-- Add more products as needed -->
       </div>
-      <div class="product">
-        <img src="images/product2.jpg" alt="Product 2">
-        <h3>Product Name 2</h3>
-        <p>$24.99</p>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <!-- Additional products as needed -->
     </section>
+
+    <!-- Cart Sidebar -->
+    <aside id="cart">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <button id="checkout-button">Checkout</button>
+    </aside>
+
+    <!-- Custom Order Section -->
+    <section id="custom-order">
+      <button onclick="location.href='contact.html'">Order Custom</button>
+    </section>
+
+    <!-- Shop Page Custom Order Button (shop.html) -->
+    <section id="custom-order">
+      <button onclick="location.href='contact.html'">Order Custom</button>
+    </section>
+
   </main>
 
+  <script src="js/cart.js"></script>
 </body>
 </html>
