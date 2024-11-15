@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store Event Calendar</title>
+  <title>Event Calendar</title>
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -19,8 +19,16 @@
   </header>
 
   <main>
-    <section id="calendar-section">
-      <h2>Upcoming Events</h2>
+    <h2>Upcoming Events</h2>
+    
+    <!-- View Toggle Buttons -->
+    <div id="view-toggle">
+      <button id="calendar-view-btn">Calendar View</button>
+      <button id="list-view-btn">List View</button>
+    </div>
+
+    <!-- Calendar Section -->
+    <section id="calendar-section" class="view">
       <div id="calendar">
         <div class="calendar-header">
           <button id="prev-month">&lt;</button>
@@ -35,15 +43,19 @@
           <div class="calendar-day">Thu</div>
           <div class="calendar-day">Fri</div>
           <div class="calendar-day">Sat</div>
-          <!-- JavaScript will populate the dates here -->
         </div>
       </div>
-      
-      <!-- Event Details Section -->
       <div id="event-details">
         <h3>Event Details</h3>
-        <p id="event-info">Click on a highlighted date to see event details.</p>
+        <p id="event-info">Click on a highlighted date to view details.</p>
       </div>
+    </section>
+
+    <!-- List View Section -->
+    <section id="list-section" class="view hidden">
+      <ul id="event-list">
+        <!-- List will be populated by JavaScript -->
+      </ul>
     </section>
   </main>
 
