@@ -21,21 +21,43 @@
   </header>
 
   <main>
-    <h2>Contact Us for Custom Orders</h2>
+    <h2>Contact Information</h2>
+
+    <h4>Email Address:</h4>
+      <p>hooksandhappiness@gmail.com</p>
+    <h4>Phone Number:</h4>
+      <p>(802) 656-5555</p>
+    <h4>Mailing Address:</h4>
+      <p>Hooks & Happiness<br>123 Main Street<br>Suite 5<br>Burlington, VT 05405
+
+    <h2>Custom Order Form</h2>
     <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="message">Custom Order Details:</label>
+      <textarea id="message" name="message" required></textarea><br>
+
+      <button type="button" onclick="saveToCSV()">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Join our email list for the newest product releases and deals!</p>
+    <form id="emailList">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="message">Custom Order Details:</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="button" onclick="saveToCSV()">Submit</button>
-    </form>
-  </main>
-
+      <button id="joinList">Join Email List</button>
+    </form> 
+    <p>&copy; 2024 Hooks & Happiness. All rights reserved.</p>
+  </footer>
   <script src="js/contact.js"></script>
 </body>
 </html>
