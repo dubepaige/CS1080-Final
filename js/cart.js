@@ -10,6 +10,7 @@ function addToCart(productName) {
 function renderCart() {
   const cartItemsList = document.getElementById("cart-items");
   cartItemsList.innerHTML = ""; // Clear the current cart list
+  let i = 0;
 
   cartItems.forEach(item => {
     const li = document.createElement("li");
