@@ -1,73 +1,58 @@
-// cart.js
+let cartItems = [];
+let totalPrice = 0;
 
-const cartItems = [];
+function addToCart(productName, productPrice) {
+  cartItems.push({ name: productName, price: productPrice });
+  totalPrice += productPrice;
+  renderCart();
+  console.log(cartItems)
+}
 
-// Add item to the cart
-function addToCart(productName) {
-  cartItems.push(productName);
+function renderCart() {
+  const cartItemsList = document.getElementById("cart-items");
+  const totalPriceElement = document.getElementById("total-price");
+  cartItemsList.innerHTML = "";
+
+  cartItems.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("remove-item");
+    removeButton.onclick = () => removeFromCart(index);
+    li.appendChild(removeButton);
+    cartItemsList.appendChild(li);
+  });
+
+  totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+}
+
+function removeFromCart(index) {
+  totalPrice -= cartItems[index].price;
+  cartItems.splice(index, 1);
   renderCart();
 }
 
-// Render the cart
-function renderCart() {
-  const cartItemsList = document.getElementById("cart-items");
-  cartItemsList.innerHTML = ""; // Clear the current cart list
-  let total = 0;
-
-  cartItems.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    cartItemsList.appendChild(li);
-    total += getPrice(item); // Calculate total price
-  });
-
-  document.getElementById("cart-total").textContent = `Total: $${total.toFixed(2)}`;
+function clearCart() {
+  cartItems.length = 0;
+  totalPrice = 0;
+  renderCart();
 }
 
-// Mock function to get product price (replace with real logic as needed)
-function getPrice(productName) {
-  const prices = {
-    "Product 1": 10.99,
-    "Product 2": 15.99
-  };
-  return prices[productName] || 0;
+
+
+function toggleCheckoutForm() {
+  const checkoutFormContainer = document.getElementById("checkout-form-container");
+  checkoutFormContainer.style.display =
+    checkoutFormContainer.style.display === "none" ? "block" : "none";
 }
 
-// Show the checkout form
-function showCheckoutForm() {
-  const cartItems = document.getElementById("cart-items").children;
-  if (cartItems.length === 0) {
-    alert("Your cart is empty.");
-    return;
-  }
-  document.getElementById("checkout-form").style.display = "block";
-}
+document.getElementById("checkout-button").addEventListener("click", toggleCheckoutForm);
+document.getElementById("clear-cart").addEventListener("click", clearCart);
 
-// Cancel the checkout process
-function cancelCheckout() {
-  document.getElementById("checkout-form").style.display = "none";
-}
-
-// Handle form submission
-document.getElementById("checkout").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    address: formData.get("address"),
-    card: formData.get("card"),
-    expiry: formData.get("expiry"),
-    cvv: formData.get("cvv"),
-  };
-
-  // Replace with API integration
-  console.log("Checkout Data:", data);
-  alert("Thank you for your purchase!");
-
-  // Reset the form and cart
-  e.target.reset();
-  document.getElementById("checkout-form").style.display = "none";
-  document.getElementById("cart-items").innerHTML = "";
-  document.getElementById("cart-total").textContent = "Total: $0.00";
+document.getElementById("checkout-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  alert("Thank you for your order!");
+  clearCart();
+  toggleCheckoutForm();
 });

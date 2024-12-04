@@ -1,0 +1,139 @@
+:root {
+    --P1: #5A325D;
+    --R1: #AC4860;
+    --O1: #F97D66;
+    --Y1: #FDFC96;
+    --Y2: #F9C763;
+    --R2: #A9575D;
+  }
+/* Shop Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--Y2);
+    color: var(--P1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background: var(--Y1);
+    color: var(--R1);
+    text-align: center;
+    padding: 3%;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  header nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--R1);
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  #products {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .product {
+    border: 1px solid var(--P1);
+    padding: 1rem;
+    background: var(--Y1);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product h3 {
+    margin: 0.5rem 0;
+  }
+  
+  .product p {
+    color: var(--P1);
+    font-weight: bold;
+  }
+  
+  .product button {
+    background: var(--R1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product button:hover {
+    background: var(--P1);
+  }
+  
+  #cart-and-checkout {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  #cart {
+    background: var(--Y1);
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1;
+  }
+  
+  #cart ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #cart li {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #cart .remove-item {
+    background: none;
+    border: none;
+    color: var(--O1);
+    cursor: pointer;
+  }
+  
+  #checkout-form-container {
+    background: var(--Y1);
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1;
+    display: none;
+  }
+  
+  #checkout-form label {
+    font-weight: bold;
+  }
+  
+  #checkout-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--R1);
+    color: white;
+  }
+  

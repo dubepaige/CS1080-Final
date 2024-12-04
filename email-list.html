@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Calendar</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<head>
+	<title>Save Web Form Data to Spreadsheets</title>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/8oo93wvjiwcHj97i/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+    <header>
+        <h1>Join Our Email List</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="calendar.html">Calendar</a>
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </header>
+    <section id="emailList">
+        <h2>Be the First to Know!</h2>
+    <p>Sign up for our email list to stay updated on new products, events, and special offers.</p>
+	
+    <form id="myForm">
+		<label>Name: </label>
+		<input name="name" />
+		<br/>
+		<label>Email: </label>
+		<input name="email" />
+		<br/>
+	</form>
+	<button onclick='SubForm()'>Submit</button>
+    <p id="thank-you-message" class="hidden">Thank you for joining our email list!</p>
+    </section>
+    
+
+  <footer>
+    <p>&copy; 2024 Hooks & Happiness. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleEmailListSubmission(event) {
+      event.preventDefault(); // Prevent page reload
+      document.getElementById("email-list-form").style.display = "none"; // Hide the form
+      document.getElementById("thank-you-message").classList.remove("hidden"); // Show thank you message
+    }
+  </script>
+</body>
+</html>

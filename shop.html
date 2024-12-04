@@ -4,10 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+    <script>
+      function SubForm (){
+        $.ajax({
+          url:"https://api.apispreadsheets.com/data/EXNV8spKAX6jqib8/",
+          type:"post",
+          data:$("#myForm").serializeArray(),
+          success: function(){
+            alert("Form Data Submitted :)")
+          },
+          error: function(){
+            alert("There was an error :(")
+          }
+        });
+      }
+    </script>
 </head>
 <body>
-
   <header>
     <h1>Our Store</h1>
     <nav>
@@ -15,7 +33,6 @@
       <a href="shop.html">Shop</a>
       <a href="contact.html">Contact Us</a>
       <a href="calendar.html">Calendar</a>
-      <a href="about.html">About Us</a>
       <a href="faq.html">FAQ</a>
     </nav>
   </header>
@@ -24,72 +41,62 @@
     <section id="products">
       <h2>Shop Our Products</h2>
       <div class="product-list">
-        <!-- Example product items -->
         <div class="product">
           <h3>Product 1</h3>
-          <p>Price: $10.99</p>
-          <button onclick="addToCart('Product 1')">Add to Cart</button>
+          <p>$10.00</p>
+          <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
         </div>
         <div class="product">
           <h3>Product 2</h3>
-          <p>Price: $15.99</p>
-          <button onclick="addToCart('Product 2')">Add to Cart</button>
+          <p>$15.00</p>
+          <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <h3>Product 3</h3>
+          <p>$20.00</p>
+          <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
         </div>
       </div>
     </section>
 
-    <!-- Cart Sidebar -->
-    <aside id="cart">
-      <h3>Your Cart</h3>
-      <ul id="cart-items"></ul>
-      <p id="cart-total">Total: $0.00</p>
-      <button id="checkout-button" onclick="showCheckoutForm()">Checkout</button>
-    </aside>
+    <div id="cart-and-checkout">
+      <!-- Cart Section -->
+      <aside id="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: $0.00</p>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="checkout-button">Checkout</button>
+      </aside>
 
-    <!-- Checkout Form -->
-    <section id="checkout-form" style="display: none;">
-      <h3>Checkout</h3>
-      <form id="checkout">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="address">Shipping Address:</label>
-        <textarea id="address" name="address" rows="3" required></textarea>
-
-        <label for="card">Card Information:</label>
-        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" maxlength="19" required>
-
-        <label for="expiry">Expiry Date:</label>
-        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
-
-        <label for="cvv">CVV:</label>
-        <input type="text" id="cvv" name="cvv" maxlength="3" required>
-
-        <button type="submit">Submit Payment</button>
-        <button type="button" onclick="cancelCheckout()">Cancel</button>
+      <!-- Checkout Form -->
+      <form id="myForm">
+        <label>name</label>
+        <input name="name" />
+        <br/>
+        <label>email</label>
+        <input name="email" />
+        <br/>
+        <label>address</label>
+        <input name="address" />
+        <br/>
+        <label>card number</label>
+        <input name="card number" />
+        <br/>
+        <label>expiry</label>
+        <input name="expiry" />
+        <br/>
+        <label>cvv</label>
+        <input name="cvv" />
+        <br/>
+        <div id="cartItems"></div>
       </form>
-    </section>
-
-    <!-- Custom Order Section -->
-    <section id="custom-order">
-      <button onclick="location.href='contact.html'">Order Custom</button>
-    </section>
+      <button onclick='SubForm()'>Submit</button>
+      </div>
   </main>
 
   <footer>
     <p>Join our email list for the newest product releases and deals!</p>
-    <form id="emailList">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <button id="joinList">Join Email List</button>
-    </form> 
     <p>&copy; 2024 Hooks & Happiness. All rights reserved.</p>
   </footer>
 
