@@ -7,19 +7,30 @@
 #F9C763
 #A9575D
 */
+
+:root {
+  --P1: #5A325D;
+  --R1: #AC4860;
+  --O1: #F97D66;
+  --Y1: #FDFC96;
+  --Y2: #F9C763;
+  --R2: #A9575D;
+}
+
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #E0BACF; /* Soft pastel pink */
-  color: #1B2D52; /* Deep navy blue */
+  background-color: var(--Y2);
+  color: var(--P1);
 }
 
 header {
   width: 100%;
-  background: linear-gradient(90deg, #6281DC, #9FB0E3); /* Blue gradient */
-  color: white;
+  background: var(--Y1);
+  color: var(--R1);
   padding: 3%;
   text-align: center;
 }
@@ -32,7 +43,7 @@ header nav {
 }
 
 header nav a {
-  color: white;
+  color: var(--R1);
   text-decoration: none;
   padding: 1%;
   font-size: 110%;
@@ -65,12 +76,12 @@ main {
   border-radius: 10px;
   color: white;
   cursor: pointer;
-  background: #4D608E; /* Muted blue */
+  background: var(--R1); /* Muted blue */
   transition: background 0.3s ease;
 }
 
 #view-toggle button:hover {
-  background: #6281DC; /* Vibrant blue */
+  background: var(--P1); /* Vibrant blue */
   transform: scale(1.05);
 }
 
@@ -103,7 +114,7 @@ main {
   padding: 2%;
   border: none;
   border-radius: 50%;
-  background-color: #9FB0E3; /* Pastel blue */
+  background-color: var(--R1); /* Pastel blue */
   color: white;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -111,7 +122,7 @@ main {
 }
 
 .calendar-header button:hover {
-  background-color: #6281DC; /* Slightly darker blue */
+  background-color: var(--R2);
   transform: scale(1.1);
 }
 
@@ -125,7 +136,7 @@ main {
 .calendar-day {
   font-weight: bold;
   padding: 3%;
-  background: #4D608E; /* Muted blue */
+  background: var(--R1);
   color: white;
   border-radius: 5px;
 }
@@ -134,7 +145,7 @@ main {
   padding: 3%;
   border: 1px solid #D4D8E5; /* Light border */
   border-radius: 10px;
-  background: #9FB0E3; /* Pastel blue */
+  background: var(--R1); /* Pastel blue */
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -146,7 +157,7 @@ main {
 }
 
 .calendar-date:hover {
-  background: #6281DC; /* Vibrant blue hover */
+  background: var(--P1);
   color: white;
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -229,4 +240,18 @@ main {
   .calendar-header h3 {
     font-size: 100%;
   }
+}
+
+footer{
+  background-color: #F97D66;
+  color: black;
+  text-align: center;
+  padding: 1%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
