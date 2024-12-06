@@ -69,7 +69,7 @@
         </div>
       </div>
     </section>
-
+    <script src="js/cart.js"></script>
     <aside id="cart-and-checkout">
       <!-- Cart Section -->
       <div id="cart">
@@ -77,10 +77,11 @@
         <ul id="cart-items"></ul>
         <p id="total-price">Total: $0.00</p>
         <button id="clear-cart">Clear Cart</button>
+        <button id="checkout-button">Checkout</button>
       </div>
 
       <!-- Checkout Form -->
-      <form id="myForm">
+      <form id="myForm" class="hidden">
         <label>name</label>
         <input name="name" />
         <br/>
@@ -119,6 +120,6 @@
     <p>&copy; 2024 Hooks & Happiness. All rights reserved.</p>
   </footer>
 
-  <script src="js/cart.js"></script>
+  
 </body>
 </html>

@@ -41,6 +41,17 @@ function clearCart() {
   renderCart();
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const clearCartButton = document.getElementById("clear-cart");
+  if (clearCartButton) {
+    clearCartButton.addEventListener("click", () => {
+      clearCart();
+      alert("Cart has been cleared!");
+    });
+  } else {
+    console.error("Clear Cart button not found!");
+  }
+})
 // Handle form submission
 function SubForm() {
   // Count occurrences of Product 1
@@ -91,7 +102,16 @@ function SubForm() {
   });
 }
 
-// Initialize event listeners
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("clear-cart").addEventListener("click", clearCart);
+  const checkoutButton = document.getElementById("checkout-button");
+  const checkoutForm = document.getElementById("myForm");
+
+  if (checkoutButton && checkoutForm) {
+    checkoutButton.addEventListener("click", () => {
+      checkoutForm.classList.toggle("hidden");
+    });
+  } else {
+    console.error("Checkout button or form not found!");
+  }
 });
+
