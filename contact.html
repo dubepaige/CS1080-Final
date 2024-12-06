@@ -6,6 +6,25 @@
   <title>Contact Us</title>
   <link rel="stylesheet" href="css/index.css">
 </head>
+<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/j9XFtb5nxjUVuW4L/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
 <body>
 
   <header>
@@ -30,32 +49,25 @@
     <h4>Mailing Address:</h4>
       <p>Hooks & Happiness<br>123 Main Street<br>Suite 5<br>Burlington, VT 05405
 
-    <h2>Custom Order Form</h2>
-    <form id="contactForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="message">Custom Order Details:</label>
-      <textarea id="message" name="message" required></textarea><br>
-
-      <button type="button" onclick="saveToCSV()">Submit</button>
+    <h2>Contact Form: </h2>
+    <p>If you're looking to request a custom order, please add details in the message box!</p>
+    <form id="myForm">
+      <label>Name: </label>
+      <input name="name" />
+      <br/>
+      <label>Email: </label>
+      <input type="email" name="email" />
+      <br/>
+      <label>Message: </label>
+      <input name="message" />
+      <br/>
     </form>
+    <button onclick='SubForm()'>Submit</button>
   </main>
 
   <footer>
     <p>Join our email list for the newest product releases and deals!</p>
-    <form id="emailList">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <button id="joinList">Join Email List</button>
-    </form> 
+    <nav> <a href="email-list.html">Join Here!</a> </nav>
     <p>&copy; 2024 Hooks & Happiness. All rights reserved.</p>
   </footer>
   <script src="js/contact.js"></script>

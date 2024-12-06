@@ -255,3 +255,51 @@ footer{
   align-items: center;
   justify-content: space-around;
 }
+
+/* Section Styling */
+section#emailList {
+  background-color: var(--Y2);
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section#emailList h2 {
+  color: var(--R1);
+  margin-bottom: 1rem;
+}
+
+section#emailList p {
+  color: var(--P1);
+  margin-bottom: 1.5rem;
+}
+
+section#emailList label {
+  font-weight: bold;
+  color: var(--R2);
+}
+
+section#emailList input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--P1);
+  border-radius: 4px;
+}
+
+section#emailList button {
+  background-color: var(--O1);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+section#emailList button:hover {
+  background-color: var(--R1);
+}
