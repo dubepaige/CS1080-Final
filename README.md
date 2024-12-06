@@ -7,7 +7,7 @@ To access email list:
 https://api.apispreadsheets.com/data/8oo93wvjiwcHj97i/
 
 To access order list:
-https://api.apispreadsheets.com/data/EXNV8spKAX6jqib8/ 
+https://api.apispreadsheets.com/data/eUE0Ih3L4rHhGm6J/
 
 To create api's:
 https://lovespreadsheets.medium.com/save-web-form-data-to-spreadsheets-880f95431f00

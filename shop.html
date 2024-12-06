@@ -10,21 +10,21 @@
 		src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 		crossorigin="anonymous"></script>
-    <script>
-      function SubForm (){
-        $.ajax({
-          url:"https://api.apispreadsheets.com/data/EXNV8spKAX6jqib8/",
-          type:"post",
-          data:$("#myForm").serializeArray(),
-          success: function(){
-            alert("Form Data Submitted :)")
-          },
-          error: function(){
-            alert("There was an error :(")
-          }
-        });
-      }
-    </script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/eUE0Ih3L4rHhGm6J/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
 </head>
 <body>
   <header>
@@ -56,6 +56,16 @@
           <h3>Product 3</h3>
           <p>$20.00</p>
           <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <h3>Product 4</h3>
+          <p>$15.00</p>
+          <button onclick="addToCart('Product 4', 15)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <h3>Product 5</h3>
+          <p>$20.00</p>
+          <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
         </div>
       </div>
     </section>
@@ -89,7 +99,16 @@
         <label>cvv</label>
         <input name="cvv" />
         <br/>
-        <input type="hidden" id="cartItems" name="cartItems" />
+        <input type="hidden" id="p1" name="p1" />
+        <br/>
+        <input type="hidden" id="p2" name="p2" />
+        <br/>
+        <input type="hidden" id="p3" name="p3" />
+        <br/>
+        <input type="hidden" id="p4" name="p4" />
+        <br/>
+        <input type="hidden" id="p5" name="p5" />
+        
       </form>
       <button onclick='SubForm()'>Submit</button>
     </aside>
