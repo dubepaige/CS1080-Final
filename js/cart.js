@@ -25,7 +25,6 @@ function renderCart() {
   });
 
   totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
-  updateFormCheckboxes();
 }
 
 // Remove an item from the cart
@@ -42,60 +41,38 @@ function clearCart() {
   renderCart();
 }
 
-// Update the form with checkboxes for cart items
-function updateFormCheckboxes() {
-  const checkboxContainer = document.getElementById("cartItemsCheckboxes");
-  checkboxContainer.innerHTML = "";
-
-  cartItems.forEach((item, index) => {
-    const label = document.createElement("label");
-    label.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "selectedItems";
-    checkbox.value = JSON.stringify(item); // Store the item data as a JSON string
-    label.prepend(checkbox);
-    const br = document.createElement("br");
-    checkboxContainer.appendChild(label);
-    checkboxContainer.appendChild(br);
-  });
-}
-
 // Handle form submission
 function SubForm() {
-  const selectedCheckboxes = document.querySelectorAll("input[name='selectedItems']:checked");
-  const selectedItems = Array.from(selectedCheckboxes).map((checkbox) => JSON.parse(checkbox.value));
+  // Count occurrences of Product 1
+  const product1Count = cartItems.filter((item) => item.name === "Product 1").length;
 
-  if (selectedItems.length === 0) {
-    alert("Please select at least one item to purchase.");
+  // Update the hidden input with Product 1 count
+  document.getElementById("cartItems").value = product1Count;
+
+  // If no Product 1 in the cart, alert the user
+  if (product1Count === 0) {
+    alert("Product 1 is not in the cart.");
     return;
   }
 
-  const cartDataInput = document.getElementById("cartData");
-  cartDataInput.value = JSON.stringify(selectedItems);
+  // Serialize form data and send to API
+  const formData = $("#myForm").serialize();
 
   $.ajax({
     url: "https://api.apispreadsheets.com/data/EXNV8spKAX6jqib8/",
     type: "post",
-    data: $("#myForm").serializeArray(),
+    data: formData,
     success: function () {
-      alert("Form Data Submitted :)");
+      alert("Checkout data successfully submitted.");
       clearCart();
     },
     error: function () {
-      alert("There was an error :(");
+      alert("There was an error submitting the data.");
     },
   });
 }
 
 // Initialize event listeners
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("checkout-button").addEventListener("click", () => {
-    document.getElementById("myForm").style.display = "block";
-  });
   document.getElementById("clear-cart").addEventListener("click", clearCart);
-  document.getElementById("myForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    SubForm();
-  });
 });

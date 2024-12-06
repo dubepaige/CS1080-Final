@@ -37,7 +37,7 @@
       <a href="faq.html">FAQ</a>
     </nav>
   </header>
-
+  
   <main>
     <section id="products">
       <h2>Shop Our Products</h2>
@@ -60,15 +60,14 @@
       </div>
     </section>
 
-    <div id="cart-and-checkout">
+    <aside id="cart-and-checkout">
       <!-- Cart Section -->
-      <aside id="cart">
+      <div id="cart">
         <h3>Your Cart</h3>
         <ul id="cart-items"></ul>
         <p id="total-price">Total: $0.00</p>
         <button id="clear-cart">Clear Cart</button>
-        <button id="checkout-button">Checkout</button>
-      </aside>
+      </div>
 
       <!-- Checkout Form -->
       <form id="myForm">
@@ -90,12 +89,10 @@
         <label>cvv</label>
         <input name="cvv" />
         <br/>
-        <h3>Select Items to Purchase:</h3>
-        <div id="cartItemsCheckboxes"></div> <!-- Placeholder for checkboxes -->
-        <input type="hidden" name="cartData" id="cartData" />
+        <input type="hidden" id="cartItems" name="cartItems" />
       </form>
       <button onclick='SubForm()'>Submit</button>
-      </div>
+    </aside>
   </main>
 
   <footer>
