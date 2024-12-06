@@ -18,6 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
     "2024-11-28": {
       title: "Holiday Pop-up",
       description: "Get ready for holiday shopping at our special pop-up event!"
+    },
+    "2024-12-10": {
+      title: "Holiday Craft Show",
+      description: "Join us for the annual holiday craft show!"
+    },
+    "2024-12-15": {
+      title: "Christmas Bizzare",
+      description: "Get those last minute Christmas presents!",
+      location: "Davis Center, Grand Maple Ballroom",
+      time: "9:00am - 3:00pm"
     }
   };
 
