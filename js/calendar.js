@@ -7,27 +7,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const listSection = document.getElementById("list-section");
   
   const events = {
-    "2024-11-15": {
+    "2024-12-07": {
       title: "Craft Fair",
-      description: "Join us at the local craft fair to explore our handmade products and unique items!"
+      description: "Join us at the local craft fair to explore our handmade products and unique items!",
+      location: "UVM Davis center, Grand Sugar Maple Ballroom",
+      time: "12:00pm - 3:00pm"
     },
-    "2024-11-20": {
+    "2024-12-08": {
       title: "Farmers Market",
-      description: "Catch us at the Farmers Market! Perfect opportunity to see our latest products in person."
+      description: "Catch us at the Indoor Farmers Market! Perfect opportunity to see our latest products in person.",
+      location: "South Burlington High School Gym",
+      time: "9:00am - 4:00pm"
     },
-    "2024-11-28": {
+    "2024-12-14": {
       title: "Holiday Pop-up",
-      description: "Get ready for holiday shopping at our special pop-up event!"
-    },
-    "2024-12-10": {
-      title: "Holiday Craft Show",
-      description: "Join us for the annual holiday craft show!"
+      description: "Get ready for holiday shopping at our special pop-up event!",
+      location: "UVM Davis center, Livak Ballroom",
+      time: "12:00pm - 3:00pm"
     },
     "2024-12-15": {
+      title: "Holiday Craft Show",
+      description: "Join us for the annual holiday craft show!",
+      location: "University Mall, In front of the entrance to JC Penney's",
+      time: "10:00am - 4:00pm"
+    },
+    "2024-12-21": {
       title: "Christmas Bizzare",
       description: "Get those last minute Christmas presents!",
-      location: "Davis Center, Grand Maple Ballroom",
+      location: "Davis Center, Grand Silver Maple Ballroom",
       time: "9:00am - 3:00pm"
+    },
+    "2024-12-22":{
+      title: "25th Annual Craft Fair and Bake Sale",
+      description: "Last chance to grab those holiday gifts and stocking stuffers!",
+      location: "Essex High School, Multipurpose Room",
+      time: "10:00am - 4:00pm"
     }
   };
 
@@ -69,21 +83,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  //Display events on list view
   function renderListView() {
     eventList.innerHTML = ""; // Clear current list
 
     for (const [date, event] of Object.entries(events)) {
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${date}</strong>: ${event.title} - ${event.description}`;
+
+      let eventHTML = `<strong>${date}</strong>: ${event.title} - ${event.description}`;
+
+      if (event.location){
+        eventHTML += `<br><strong>Location:</strong> ${event.location}`;
+      }
+      if (event.time){
+        eventHTML += `<br><strong>Time:</strong> ${event.time}`;
+      }
+      li.innerHTML = eventHTML;
       eventList.appendChild(li);
     }
   }
 
+  //Display events on calendar view
   function showEventDetails(date) {
     if (events[date]) {
-      eventInfo.innerHTML = `<strong>${events[date].title}</strong>: ${events[date].description}`;
-    } else {
-      eventInfo.textContent = "No events scheduled for this date.";
+      let eventHTML = `<strong>${events[date].title}</strong>: ${events[date].description}`;
+    
+    if (events[date].location) {
+      eventHTML += `<br><strong>Location:</strong> ${events[date].location}`;
+    }
+    if (events[date].time) {
+      eventHTML += `<br><strong>Time:</strong> ${events[date].time}`;
+    }
+
+    eventInfo.innerHTML = eventHTML;
+  } else {
+    eventInfo.textContent = "No events scheduled for this date.";
     }
   }
 
