@@ -23,23 +23,34 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--Y2);
+  background-color: var(--Y1);
   color: var(--P1);
 }
 
 header {
   width: 100%;
-  background: var(--Y1);
+  background: var(--P1);
   color: var(--R1);
   padding: 3%;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Style logo */
+#logo {
+  height: 50%;
+  margin-right: 1%;
 }
 
 header nav {
+  margin-right: 7%;
   display: flex;
-  justify-content: center;
-  gap: 5%;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3%;
+  flex-grow: 1;
+  align-items: center;
 }
 
 header nav a {
@@ -53,6 +64,24 @@ header nav a {
 header nav a:hover {
   text-decoration: underline;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/*Responsive Design*/
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  #logo{
+    height: 40px;
+    margin-bottom: 10px;
+  }
 }
 
 /* Main Layout */
@@ -243,8 +272,8 @@ main {
 }
 
 footer{
-  background-color: #F97D66;
-  color: black;
+  background-color: var(--R1);
+  color: white;
   text-align: center;
   padding: 1%;
   position: relative;
