@@ -31,7 +31,7 @@ header {
   width: 100%;
   background: var(--P1);
   color: var(--R1);
-  padding: 3%;
+  padding: 1%;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -45,7 +45,7 @@ header {
 }
 
 header nav {
-  margin-right: 7%;
+  margin-right: 4%;
   display: flex;
   justify-content: space-evenly;
   gap: 3%;
@@ -89,6 +89,74 @@ main {
   padding: 5%;
 }
 
+/* Contact section container */
+#contact {
+  display: flex;
+  justify-content: space-between;  
+  gap: 2%;  
+  flex-wrap: wrap; 
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Contact-info section */
+#contact-info {
+  flex: 1; 
+  padding: 1.5rem;
+  background-color: var(--Y2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Contact-form section */
+#contact-form {
+  flex: 1;  
+  padding: 1.5rem;
+  background-color: var(--Y2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Form elements inside the contact-form */
+#contact-form input,
+#contact-form textarea,
+#contact-form select {
+  width: 100%; 
+  padding: 0.75rem;
+  margin-bottom: 1rem; 
+  border: 1px solid var(--P1);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+#contact-form button {
+  background-color: var(--O1);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem; 
+}
+
+#contact-form button:hover {
+  background-color: var(--R1);
+}
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  #contact {
+    flex-direction: column; 
+    gap: 1.5rem; 
+  }
+
+  #contact-info, #contact-form {
+    flex: none;  
+    width: 100%;
+  }
+}
 /* View Toggle Buttons */
 #view-toggle {
   display: flex;
@@ -241,7 +309,7 @@ main {
   display: none;
 }
 
-/* Responsive Design */
+/* Responsive Design header*/
 @media (max-width: 768px) {
   header nav {
     flex-direction: column;
@@ -283,6 +351,14 @@ footer{
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+/*Responsive Design footer*/
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Section Styling */
