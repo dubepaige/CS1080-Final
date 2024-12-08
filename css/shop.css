@@ -9,7 +9,7 @@
 /* Shop Page Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: var(--Y2);
+    background-color: var(--Y1);
     color: var(--P1);
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ body {
     width: 100%;
     background: var(--P1);
     color: var(--R1);
-    padding: 3%;
+    padding: 1%;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
@@ -30,11 +30,9 @@ body {
   /* Style logo */
   #logo {
     height: 50%;
-    margin-right: 1%;
   }
   
   header nav {
-    margin-right: 7%;
     display: flex;
     justify-content: space-evenly;
     gap: 3%;
@@ -88,7 +86,7 @@ body {
   .product {
     border: 1px solid var(--P1);
     padding: 1rem;
-    background: var(--Y1);
+    background: var(--Y2);
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,7 +121,7 @@ body {
   }
   
   #cart {
-    background: var(--Y1);
+    background: var(--Y2);
     padding: 1rem;
     border-radius: 10px;
     flex: 1;

@@ -25,6 +25,7 @@ body {
   box-sizing: border-box;
   background-color: var(--Y1);
   color: var(--P1);
+  text-align: center;
 }
 
 header {
@@ -41,11 +42,9 @@ header {
 /* Style logo */
 #logo {
   height: 50%;
-  margin-right: 1%;
 }
 
 header nav {
-  margin-right: 4%;
   display: flex;
   justify-content: space-evenly;
   gap: 3%;
@@ -87,6 +86,94 @@ header nav a:hover {
 /* Main Layout */
 main {
   padding: 5%;
+  margin: 0;
+}
+
+/* Hero Section */
+#hero {
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  padding: 5%;
+  color: var(--P1);
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+}
+
+/* Welcome Box */
+#welcome-box {
+  background-color: var(--Y2);
+  padding: 3rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#welcome-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#welcome-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Info Boxes Section */
+#info-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  margin: 2rem 0;
+}
+
+.box {
+  background-color: var(--Y2);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.box h3 {
+  font-size: 1.6rem;
+  color: var(--P1);
+  margin-bottom: 1rem;
+}
+
+.box p {
+  font-size: 1.2rem;
+}
+
+/* Image Gallery Section */
+#gallery {
+  margin: 3% auto;
+  padding: 2rem;
+  background-color: var(--Y2);
+}
+
+#gallery h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact section container */
@@ -132,7 +219,7 @@ main {
 
 /* Submit button */
 #contact-form button {
-  background-color: var(--O1);
+  background-color: var(--R1);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -143,7 +230,7 @@ main {
 }
 
 #contact-form button:hover {
-  background-color: var(--R1);
+  background-color: var(--P1);
 }
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
@@ -396,7 +483,7 @@ section#emailList input {
 }
 
 section#emailList button {
-  background-color: var(--O1);
+  background-color: var(--R1);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -406,5 +493,5 @@ section#emailList button {
 }
 
 section#emailList button:hover {
-  background-color: var(--R1);
+  background-color: var(--P1);
 }
