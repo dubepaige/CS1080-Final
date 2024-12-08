@@ -426,26 +426,34 @@ main {
   }
 }
 
-footer{
-  background-color: var(--R1);
-  color: white;
-  text-align: center;
-  padding: 1%;
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+/* FAQ page */
+#faq {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  gap: 2%;
+  margin: 2rem 2;
+  flex-wrap: wrap;
 }
 
-/*Responsive Design footer*/
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    align-items: center;
-  }
+.box {
+  background-color: var(--Y2);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  text-align: center;  
+}
+
+.box h3 {
+  font-size: 1.6rem;
+  color: var(--P1);
+  margin-bottom: 1rem;
+}
+
+.box p {
+  font-size: 1.2rem;
+  color: var(--P1);
+  margin-bottom: 1.5rem;
 }
 
 /* Section Styling */
@@ -494,4 +502,26 @@ section#emailList button {
 
 section#emailList button:hover {
   background-color: var(--P1);
+}
+
+footer{
+  background-color: var(--R1);
+  color: white;
+  text-align: center;
+  padding: 1%;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/*Responsive Design footer*/
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
