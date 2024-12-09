@@ -126,7 +126,14 @@ body {
     border-radius: 10px;
     flex: 1;
   }
-  
+  #cart button {
+    background: var(--R1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   #cart ul {
     list-style: none;
     padding: 0;
@@ -151,7 +158,14 @@ body {
     flex: 1;
     display: none;
   }
-  
+  #submitBtn {
+    background: var(--R1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   #checkout-form label {
     font-weight: bold;
   }
