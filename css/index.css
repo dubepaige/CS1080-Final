@@ -89,6 +89,11 @@ main {
   margin: 0;
 }
 
+h2 {
+font-size: 3rem;
+margin-top: 0%;
+}
+
 /* Hero Section */
 #hero {
   background: url('images/hero-bg.jpg') no-repeat center center/cover;
@@ -425,6 +430,46 @@ main {
     font-size: 100%;
   }
 }
+/* About us*/
+#meet-the-team {
+  display: flex;
+  justify-content: space-around;
+  gap: 2%;
+  margin: 2rem 2;
+  flex-wrap: wrap;
+}
+
+.about-box {
+  background-color: var(--Y2);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  text-align: left;
+  margin-bottom: 3%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;  
+}
+
+.about-box .text-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-box h4 {
+  font-size: 1.6rem;
+  color: var(--P1);
+  margin-bottom: 1rem;
+}
+
+.about-box p {
+  font-size: 1.2rem;
+  color: var(--P1);
+  margin-bottom: 1.5rem;
+}
+
 
 /* FAQ page */
 #faq {
@@ -441,7 +486,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 40%;
-  text-align: center;  
+  text-align: center;
+  margin-bottom: 3%;  
 }
 
 .box h3 {
