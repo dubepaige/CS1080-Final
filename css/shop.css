@@ -154,13 +154,54 @@ body {
     cursor: pointer;
   }
   
-  #checkout-form-container {
-    background: var(--Y2);
-    padding: 1rem;
-    border-radius: 10px;
+  #checkout {
     flex: 1;
+    background-color: var(--Y2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #checkout-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  #checkout-form input,
+  #checkout-form textarea,
+  #checkout-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--P1);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
+  #submitBtn {
+    background: var(--R1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3%;
+  
+  }
+
+  
+  /* #checkout-form-container {
+    background: var(--Y2);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: none;
   }
+
   #submitBtn {
     background: var(--R1);
     color: white;
@@ -169,16 +210,50 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+
   #checkout-form label {
     font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
   }
   
   #checkout-form input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.8rem;
     margin-bottom: 1rem;
-  }
+    border: 1px solid var(--P1)
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  } */
   
+  /* payments section */
+  #payments {
+    padding: 2rem;
+  }
+
+  .payment-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .payment-methods p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .payment-methods img {
+    width: auto;
+    margin-left: 10px;
+  }
+
+  /* Footer style */
   footer{
     background-color: var(--R1);
     color: white;
