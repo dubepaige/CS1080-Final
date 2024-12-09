@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       time: "12:00pm - 3:00pm"
     },
     "2024-12-08": {
-      title: "Farmers Market",
+      title: "Indoor Farmers Market",
       description: "Catch us at the Indoor Farmers Market! Perfect opportunity to see our latest products in person.",
       location: "South Burlington High School Gym",
       time: "9:00am - 4:00pm"
@@ -42,6 +42,30 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "Last chance to grab those holiday gifts and stocking stuffers!",
       location: "Essex High School, Multipurpose Room",
       time: "10:00am - 4:00pm"
+    },
+    "2025-1-04":{
+      title: "New Year's Craft Festival",
+      description: "New year, new plushies! Come check out the newest editions to our inventory.",
+      location: "Davis Center, Room 400",
+      time: "12:00pm - 3:00pm"
+    },
+    "2025-1-12":{
+      title: "Indoor Farmers Market",
+      description: "Catch us at the Indoor Farmers Market! Perfect opportunity to see and feel our latest products.",
+      location: "South Burlington High School Gym",
+      time: "9:00am - 4:00pm"
+    },
+    "2025-1-18":{
+      title: "5th Annual Vendor Show",
+      description: "A chance for you to come meet our team and check out the new product line!",
+      location: "Essex High School Gym",
+      time: "11:00am - 3:00pm"
+    },
+    "2025-1-26":{
+      title: "Indoor Farmers Market",
+      description: "Catch us at the Indoor Farmers Market! We're here every other Sunday in January.",
+      location: "South Burlington High School Gym",
+      time: "9:00am - 4:00pm"
     }
   };
 
