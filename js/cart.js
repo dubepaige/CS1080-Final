@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (clearCartButton) {
     clearCartButton.addEventListener("click", () => {
       clearCart();
-      alert("Cart has been cleared!");
     });
   } else {
     console.error("Clear Cart button not found!");
