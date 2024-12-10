@@ -553,6 +553,52 @@ section#emailList button:hover {
   background-color: var(--P1);
 }
 
+/*Gallery page Style*/
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 2;
+}
+
+.gallery-grid {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.gallery-grid h3 {
+  font-size: 1.6rem;
+  color: var(--P1);
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*Responsive Design*/
+@media (max-width: 768px) {
+  #gallery {
+    gap: 1rem; /* Reduce gap on smaller screens */
+  }
+  
+  .gallery-grid {
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+}
+
 footer{
   background-color: var(--R1);
   color: white;
