@@ -113,6 +113,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Playwrite DE Grund', sans-serif;
   }
   
   .product button:hover {
@@ -151,6 +152,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Playwrite DE Grund', sans-serif;
   }
 
   #cart button:hover {
@@ -201,7 +203,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-left: 3%;
-  
   }
   
   /* payments section */
