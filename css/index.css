@@ -477,6 +477,14 @@ margin-top: 0%;
   width: 20%;
 }
 
+#ashlynPic {
+  width: 20%;
+}
+
+#tiffanyPic {
+  width: 20%;
+}
+
 /* FAQ page */
 #faq {
   display: flex;
