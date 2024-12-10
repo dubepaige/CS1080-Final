@@ -592,6 +592,7 @@ section#emailList button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 section#emailList button:hover {
