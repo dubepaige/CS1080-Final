@@ -622,9 +622,9 @@ footer{
 }
 
 /*Changes color of footer links*/
-.footer-link {
+
   a:visited {
-    color:var(--Y1);
+    color:var(--Y2);
   }
   
   a:link {
@@ -632,6 +632,6 @@ footer{
   }
   
   a:hover {
-    color:var(--Y2);
+    color:var(--Y1);
   }
-}
+
