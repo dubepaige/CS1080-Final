@@ -565,9 +565,16 @@ section#emailList p {
   font-family: 'Playwrite DE Grund', sans-serif;
 }
 
-section#emailList label {
-  font-weight: bold;
+section#emailList .label-style {
   color: var(--P1);
+  font-family: 'Lilita One', sans-serif;
+  font-weight: 50;
+}
+
+.label-style {
+  color: var(--P1);
+  font-family: 'Lilita One', sans-serif;
+  font-weight: 50;
 }
 
 section#emailList input {
