@@ -53,7 +53,7 @@ header nav {
 }
 
 header nav a {
-  color: var(--R1);
+  color: #c48293;
   text-decoration: none;
   padding: 1%;
   font-size: 110%;
@@ -623,3 +623,14 @@ footer{
     align-items: center;
   }
 }
+
+/*Changes color of footer links*/
+  
+  a {
+    color:rgb(255, 255, 255);
+  }
+  
+  a:hover {
+    color:#f2d0d9;
+  }
+
