@@ -567,14 +567,12 @@ section#emailList p {
 
 section#emailList .label-style {
   color: var(--P1);
-  font-family: 'Lilita One', sans-serif;
-  font-weight: 50;
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 .label-style {
   color: var(--P1);
-  font-family: 'Lilita One', sans-serif;
-  font-weight: 50;
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 section#emailList input {
