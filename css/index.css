@@ -620,3 +620,18 @@ footer{
     align-items: center;
   }
 }
+
+/*Changes color of footer links*/
+.footer-link {
+  a:visited {
+    color:var(--Y1);
+  }
+  
+  a:link {
+    color:rgb(255, 255, 255);
+  }
+  
+  a:hover {
+    color:var(--Y2);
+  }
+}
