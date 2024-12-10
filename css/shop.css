@@ -248,3 +248,12 @@ body {
     footer a:hover {
       color:#f2d0d9;
     }
+
+    h2 {
+      font-family: 'Playwrite DE Grund', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Lilita One', sans-serif;
+      font-weight: 50;
+    }
