@@ -237,6 +237,12 @@ h2 {
   box-sizing: border-box;
 }
 
+.message-input {
+  height: 10rem;
+  resize: none;
+  overflow: auto;
+}
+
 /* Submit button */
 #contact-form button {
   background-color: var(--R1);
