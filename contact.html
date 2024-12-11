@@ -23,9 +23,9 @@
 				type:"post",
 				data:$("#myForm").serializeArray(),
 				success: function(){
-          document.getElementById('name-input').value = '';
-          document.getElementById('email-input').value = '';
-          document.getElementById('message-input').value = '';
+          document.getElementById('contact-name-input').value = '';
+          document.getElementById('contact-email-input').value = '';
+          document.getElementById('contact-message-input').value = '';
 					alert("Form Data Submitted :)")
 				},
 				error: function(){
@@ -67,13 +67,13 @@
           <p>If you're looking to request a custom order, please add details in the message box!</p>
         <form id="myForm">
           <label class="label-style">Full Name: </label>
-          <input name="name" id="name-input" />
+          <input name="name" id="contact-name-input" />
           <br/>
           <label class="label-style">Email Address: </label>
-          <input type="email" name="email" id="email-input" />
+          <input type="email" name="email" id="contact-email-input" />
           <br/>
           <label class="label-style">Message: </label>
-          <textarea name="message" class="message-input-box" id="message-input"></textarea>
+          <textarea name="message" class="message-input-box" id="contact-message-input"></textarea>
           <br/>
         </form>
           <button onclick='SubForm()'>Submit</button>
