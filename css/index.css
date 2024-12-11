@@ -290,6 +290,7 @@ h2 {
   cursor: pointer;
   background: var(--R1); /* Muted blue */
   transition: background 0.3s ease;
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 #view-toggle button:hover {
@@ -361,14 +362,16 @@ h2 {
   padding: 3%;
   border: 1px solid #D4D8E5; /* Light border */
   border-radius: 10px;
-  background: var(--R1); /* Pastel blue */
+  background: #dba5b3; /* Pastel blue */
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 .calendar-date.event {
-  background: #E0BACF; /* Pastel pink for events */
+  background: var(--R1); /* Pastel pink for events */
   font-weight: bold;
 }
 
@@ -418,12 +421,7 @@ h2 {
   border-radius: 10px;
   background: #F7F9FC; /* Light grayish-blue */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#list-section li:hover {
-  background: #E0BACF; /* Soft pink hover */
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 /* Hidden Class */
