@@ -694,3 +694,16 @@ footer{
   #email-link:hover {
     color: #815685;
   }
+
+  #FAQ-footer {
+    font-family: 'Playwrite DE Grund', sans-serif;
+    color: var(--P1);
+  }
+
+  #FAQ-footer a {
+    color: var(--P1);
+  }
+
+  #FAQ-footer a:hover {
+    color: #815685;
+  }
