@@ -687,10 +687,10 @@ footer{
     font-family: 'Playwrite DE Grund', sans-serif;
   }
 
-  .email-link {
+  #email-link {
     color:var(--P1);
   }
 
-  .email-link:visited {
+  #email-link:hover {
     color: #c58fc9;
   }
