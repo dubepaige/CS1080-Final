@@ -301,7 +301,7 @@ h2 {
 #calendar-section {
   width: 100%;
   padding: 2%;
-  background: var(--Y2); /* Light grayish-blue background */
+  background: var(--Y2);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
@@ -317,10 +317,11 @@ h2 {
 .calendar-header h3 {
   font-size: 120%;
   font-weight: bold;
-  color: #1B2D52;
+  color: var(--P1);
   font-family: 'Lilita One', sans-serif;
   font-weight: 50;
 }
+
 
 .calendar-header button {
   font-size: 120%;
@@ -333,6 +334,7 @@ h2 {
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease;
+  font-family: 'Playwrite DE Grund', sans-serif;
 }
 
 .calendar-header button:hover {
