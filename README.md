@@ -1,4 +1,9 @@
 # CS1080-Final
+Link to logo sketches (planning): 
+https://drive.google.com/file/d/1F03zZcMfEcOp8S9-pRGQVCvYh2yV0kBV/view?usp=drive_link
+
+Link to sitemap (planning):
+https://drive.google.com/file/d/1ET9L52P5yPoixySFOJrk2R2MF3N88aeu/view?usp=drive_link
 
 To access contacted form:
 Visit URL: https://api.apispreadsheets.com/data/j9XFtb5nxjUVuW4L/
