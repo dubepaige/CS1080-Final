@@ -686,3 +686,11 @@ footer{
   a {
     font-family: 'Playwrite DE Grund', sans-serif;
   }
+
+  .email-link a {
+    color:var(--P1);
+  }
+
+  .email-link a:visited {
+    color: #c58fc9;
+  }
