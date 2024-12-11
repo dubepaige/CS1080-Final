@@ -281,3 +281,12 @@ body {
     .footer-link a:hover {
       color:#f2d0d9;
     }
+
+#shop-name, #shop-email, 
+#shop-number,#shop-address, 
+#shop-city, #shop-state, 
+#shop-zip, #shop-card, 
+#shop-expiry, #shop-cvv {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
