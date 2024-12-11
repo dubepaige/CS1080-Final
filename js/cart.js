@@ -105,11 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutButton = document.getElementById("checkout-button");
   const checkoutForm = document.getElementById("myForm");
   const submitBtn = document.getElementById("submitBtn");
+  const cartWrapper = document.getElementById("cart-and-checkout-wrapper");
 
   if (checkoutButton && checkoutForm) {
     checkoutButton.addEventListener("click", () => {
       checkoutForm.classList.toggle("hidden");
       submitBtn.classList.toggle("hidden");
+
     });
   } else {
     console.error("Checkout button or form not found!");
