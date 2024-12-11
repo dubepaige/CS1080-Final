@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const eventList = document.getElementById("event-list");
   const calendarSection = document.getElementById("calendar-section");
   const listSection = document.getElementById("list-section");
-  
+
   const events = {
     "2024-12-07": {
       title: "Craft Fair",
@@ -32,36 +32,36 @@ document.addEventListener("DOMContentLoaded", function () {
       time: "10:00am - 4:00pm"
     },
     "2024-12-21": {
-      title: "Christmas Bizzare",
-      description: "Get those last minute Christmas presents!",
+      title: "Christmas Bizarre",
+      description: "Get those last-minute Christmas presents!",
       location: "Davis Center, Grand Silver Maple Ballroom",
       time: "9:00am - 3:00pm"
     },
-    "2024-12-22":{
+    "2024-12-22": {
       title: "25th Annual Craft Fair and Bake Sale",
       description: "Last chance to grab those holiday gifts and stocking stuffers!",
       location: "Essex High School, Multipurpose Room",
       time: "10:00am - 4:00pm"
     },
-    "2025-1-04":{
+    "2025-01-04": {
       title: "New Year's Craft Festival",
-      description: "New year, new plushies! Come check out the newest editions to our inventory.",
+      description: "New year, new plushies! Come check out the newest additions to our inventory.",
       location: "Davis Center, Room 400",
       time: "12:00pm - 3:00pm"
     },
-    "2025-1-12":{
+    "2025-01-12": {
       title: "Indoor Farmers Market",
       description: "Catch us at the Indoor Farmers Market! Perfect opportunity to see and feel our latest products.",
       location: "South Burlington High School Gym",
       time: "9:00am - 4:00pm"
     },
-    "2025-1-18":{
+    "2025-01-18": {
       title: "5th Annual Vendor Show",
       description: "A chance for you to come meet our team and check out the new product line!",
       location: "Essex High School Gym",
       time: "11:00am - 3:00pm"
     },
-    "2025-1-26":{
+    "2025-01-26": {
       title: "Indoor Farmers Market",
       description: "Catch us at the Indoor Farmers Market! We're here every other Sunday in January.",
       location: "South Burlington High School Gym",
@@ -96,18 +96,34 @@ document.addEventListener("DOMContentLoaded", function () {
       dateCell.classList.add("calendar-date");
       dateCell.textContent = date;
 
-      // Highlight and add click event for dates with events
+      // Add click event for all dates
+      dateCell.addEventListener("click", () => showEventDetails(fullDate));
+
+      // Highlight dates with events
       if (events[fullDate]) {
         dateCell.classList.add("event");
         dateCell.title = events[fullDate].title;
-        dateCell.addEventListener("click", () => showEventDetails(fullDate));
       }
 
       calendarGrid.appendChild(dateCell);
     }
   }
 
-  //Display events on list view
+  function showEventDetails(date) {
+    if (events[date]) {
+      let eventHTML = `<strong>${events[date].title}</strong>: ${events[date].description}`;
+      if (events[date].location) {
+        eventHTML += `<br><strong>Location:</strong> ${events[date].location}`;
+      }
+      if (events[date].time) {
+        eventHTML += `<br><strong>Time:</strong> ${events[date].time}`;
+      }
+      eventInfo.innerHTML = eventHTML;
+    } else {
+      eventInfo.innerHTML = "No events scheduled for this date.";
+    }
+  }
+
   function renderListView() {
     eventList.innerHTML = ""; // Clear current list
 
@@ -115,33 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const li = document.createElement("li");
 
       let eventHTML = `<strong>${date}</strong>: ${event.title} - ${event.description}`;
-
-      if (event.location){
+      if (event.location) {
         eventHTML += `<br><strong>Location:</strong> ${event.location}`;
       }
-      if (event.time){
+      if (event.time) {
         eventHTML += `<br><strong>Time:</strong> ${event.time}`;
       }
       li.innerHTML = eventHTML;
       eventList.appendChild(li);
-    }
-  }
-
-  //Display events on calendar view
-  function showEventDetails(date) {
-    if (events[date]) {
-      let eventHTML = `<strong>${events[date].title}</strong>: ${events[date].description}`;
-    
-    if (events[date].location) {
-      eventHTML += `<br><strong>Location:</strong> ${events[date].location}`;
-    }
-    if (events[date].time) {
-      eventHTML += `<br><strong>Time:</strong> ${events[date].time}`;
-    }
-
-    eventInfo.innerHTML = eventHTML;
-  } else {
-    eventInfo.textContent = "No events scheduled for this date.";
     }
   }
 
