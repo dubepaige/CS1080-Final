@@ -671,11 +671,11 @@ footer{
 
 /*Changes color of footer links*/
   
-  a {
+  .footer-link a {
     color:rgb(255, 255, 255);
   }
   
-  a:hover {
+  .footer-link a:hover {
     color:#f2d0d9;
   }
 
