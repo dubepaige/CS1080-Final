@@ -707,3 +707,8 @@ footer{
   #FAQ-footer a:hover {
     color: #815685;
   }
+
+  h1{
+    font-family: 'Lilita One', sans-serif;
+    font-weight: 50;
+  }
