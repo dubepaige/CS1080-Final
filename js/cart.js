@@ -92,6 +92,16 @@ function SubForm() {
     type: "post",
     data: formData,
     success: function () {
+      document.getElementById('shop-name').value = '';
+      document.getElementById('shop-email').value = '';
+      document.getElementById('shop-number').value = '';
+      document.getElementById('shop-address').value = '';
+      document.getElementById('shop-city').value = '';
+      document.getElementById('shop-state').value = '';
+      document.getElementById('shop-zip').value = '';
+      document.getElementById('shop-card').value = '';
+      document.getElementById('shop-expiry').value = '';
+      document.getElementById('shop-cvv').value = '';
       alert("Checkout data successfully submitted.");
       clearCart();
     },
