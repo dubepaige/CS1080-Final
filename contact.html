@@ -23,10 +23,10 @@
 				type:"post",
 				data:$("#myForm").serializeArray(),
 				success: function(){
-					alert("Form Data Submitted :)")
           document.getElementById('name-input').value = '';
           document.getElementById('email-input').value = '';
           document.getElementById('message-input').value = '';
+					alert("Form Data Submitted :)")
 				},
 				error: function(){
 					alert("There was an error :(")

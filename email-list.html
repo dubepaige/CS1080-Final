@@ -25,6 +25,8 @@
 				type:"post",
 				data:$("#myForm").serializeArray(),
 				success: function(){
+          document.getElementById('email-input').value = '';
+          document.getElementById('name-input').value = '';
 					alert("Form Data Submitted :)")
 				},
 				error: function(){
@@ -56,10 +58,10 @@
 	
     <form id="myForm">
 		<label class="label-style">Full Name: </label>
-		<input name="name" />
+		<input name="name" id="name-input" />
 		<br/>
 		<label class="label-style">Email Address: </label>
-		<input name="email" />
+		<input name="email" id="email-input" />
 		<br/>
 	</form>
 	<button onclick='SubForm()'>Submit</button>
