@@ -301,7 +301,7 @@ h2 {
 #calendar-section {
   width: 100%;
   padding: 2%;
-  background: #F7F9FC; /* Light grayish-blue background */
+  background: var(--Y2); /* Light grayish-blue background */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
