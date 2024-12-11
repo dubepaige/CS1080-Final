@@ -11,61 +11,71 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Craft Fair",
       description: "Join us at the local craft fair to explore our handmade products and unique items!",
       location: "UVM Davis center, Grand Sugar Maple Ballroom",
-      time: "12:00pm - 3:00pm"
+      time: "12:00pm - 3:00pm",
+      date: "December 7th, 2024"
     },
     "2024-12-08": {
       title: "Indoor Farmers Market",
       description: "Catch us at the Indoor Farmers Market! Perfect opportunity to see our latest products in person.",
       location: "South Burlington High School Gym",
-      time: "9:00am - 4:00pm"
+      time: "9:00am - 4:00pm",
+      date: "December 8th, 2024"
     },
     "2024-12-14": {
       title: "Holiday Pop-up",
       description: "Get ready for holiday shopping at our special pop-up event!",
       location: "UVM Davis center, Livak Ballroom",
-      time: "12:00pm - 3:00pm"
+      time: "12:00pm - 3:00pm",
+      date: "December 14th, 2024"
     },
     "2024-12-15": {
       title: "Holiday Craft Show",
       description: "Join us for the annual holiday craft show!",
       location: "University Mall, In front of the entrance to JC Penney's",
-      time: "10:00am - 4:00pm"
+      time: "10:00am - 4:00pm",
+      date: "December 15th, 2024"
     },
     "2024-12-21": {
       title: "Christmas Bizarre",
       description: "Get those last-minute Christmas presents!",
       location: "Davis Center, Grand Silver Maple Ballroom",
-      time: "9:00am - 3:00pm"
+      time: "9:00am - 3:00pm",
+      date: "December 21st, 2024"
     },
     "2024-12-22": {
       title: "25th Annual Craft Fair and Bake Sale",
       description: "Last chance to grab those holiday gifts and stocking stuffers!",
       location: "Essex High School, Multipurpose Room",
-      time: "10:00am - 4:00pm"
+      time: "10:00am - 4:00pm",
+      date: "December 22nd, 2024"
     },
     "2025-01-04": {
       title: "New Year's Craft Festival",
       description: "New year, new plushies! Come check out the newest additions to our inventory.",
       location: "Davis Center, Room 400",
-      time: "12:00pm - 3:00pm"
+      time: "12:00pm - 3:00pm",
+      date: "January 4th, 2025"
     },
     "2025-01-12": {
       title: "Indoor Farmers Market",
       description: "Catch us at the Indoor Farmers Market! Perfect opportunity to see and feel our latest products.",
       location: "South Burlington High School Gym",
-      time: "9:00am - 4:00pm"
+      time: "9:00am - 4:00pm",
+      date: "January 12th, 2025"
     },
     "2025-01-18": {
       title: "5th Annual Vendor Show",
       description: "A chance for you to come meet our team and check out the new product line!",
       location: "Essex High School Gym",
-      time: "11:00am - 3:00pm"
+      time: "11:00am - 3:00pm",
+      date: "January 8th, 2025"
     },
     "2025-01-26": {
       title: "Indoor Farmers Market",
       description: "Catch us at the Indoor Farmers Market! We're here every other Sunday in January.",
       location: "South Burlington High School Gym",
-      time: "9:00am - 4:00pm"
+      time: "9:00am - 4:00pm",
+      date: "January 26th, 2025"
     }
   };
 
@@ -117,6 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (events[date].time) {
         eventHTML += `<br><strong>Time:</strong> ${events[date].time}`;
+      }
+      if (events[date].date) {
+        eventHTML += `<br><strong>Date:</strong> ${events[date].date}`;
       }
       eventInfo.innerHTML = eventHTML;
     } else {
@@ -172,5 +185,5 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCalendar();
   });
 
-  renderCalendar(); // Initial render
+  renderCalendar();
 });
