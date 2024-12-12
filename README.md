@@ -19,3 +19,7 @@ https://lovespreadsheets.medium.com/save-web-form-data-to-spreadsheets-880f95431
 
 Notes:
 api being used is NOT PRIVATE. This would be a serious issue if this was actually running, as credit card info is available online through the link. If this was actually running, you would want to create an account with the website above, using a subscription. (I think there are also free ways to, but this way is much easier!)
+
+Input validation is not being used!! please do not try to break our site!
+
+Possible ability of hackers to push to api if they found the code used for it. API key would fix this issue.
