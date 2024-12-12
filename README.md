@@ -5,6 +5,9 @@ https://drive.google.com/file/d/1F03zZcMfEcOp8S9-pRGQVCvYh2yV0kBV/view?usp=drive
 Link to sitemap (planning):
 https://drive.google.com/file/d/1ET9L52P5yPoixySFOJrk2R2MF3N88aeu/view?usp=drive_link
 
+Link to trello board (planning):
+https://trello.com/b/VwDEatcm/web-dev-final-project 
+
 To access contacted form:
 Visit URL: https://api.apispreadsheets.com/data/j9XFtb5nxjUVuW4L/
 
